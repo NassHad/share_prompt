@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import Profile from "@components/Profile";
 
-const UserProfile = () => {
+const MyProfile = () => {
     const { data: session } = useSession();
     const [posts, setPosts] = useState([]);
     const router = useRouter();
@@ -57,4 +57,4 @@ const UserProfile = () => {
     );
 };
 
-export default UserProfile;
+export default MyProfile;

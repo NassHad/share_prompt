@@ -46,6 +46,15 @@ const Feed = () => {
     };
 
     const filterPosts = (newSearchText) => {
+        // Solution with regex
+
+        // const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+        // return allPosts.filter(
+        //     (item) =>
+        //         regex.test(item.creator.username) ||
+        //         regex.test(item.tag) ||
+        //         regex.test(item.prompt)
+        // );
         if (newSearchText.trim() === "") {
             // Si l'input est vide, réinitialiser la liste des posts
             setPosts(originalPosts);
