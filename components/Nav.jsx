@@ -29,21 +29,21 @@ const Nav = () => {
                     height={30}
                     className="object-contain"
                 />
-                <p className="logo_text">Share Prompt</p>
+                <p className="logo_text">Promptly</p>
             </Link>
 
             <div className="sm:flex hidden">
                 {session?.user ? (
                     <div className="flex gap-3 md:gap-5">
                         <Link href="/create-prompt" className="black_btn">
-                            Create Prompt
+                            Créer une note
                         </Link>
                         <button
                             type="button"
                             onClick={signOut}
                             className="outline_btn"
                         >
-                            Sign Out
+                            Se déconnecter
                         </button>
                         <Link href="profile">
                             <Image
@@ -65,7 +65,7 @@ const Nav = () => {
                                     onClick={() => signIn(provider.id)}
                                     className="black_btn"
                                 >
-                                    SignIn
+                                    Se connecter
                                 </button>
                             ))}
                     </>
@@ -89,14 +89,14 @@ const Nav = () => {
                                     className="dropdown_link"
                                     onClick={() => setToggleDropdown(false)}
                                 >
-                                    My profile
+                                    Mon profil
                                 </Link>
                                 <Link
                                     href="/profile"
                                     className="dropdown_link"
                                     onClick={() => setToggleDropdown(false)}
                                 >
-                                    Create prompt
+                                    Créer une note
                                 </Link>
                                 <button
                                     type="button"
@@ -106,7 +106,7 @@ const Nav = () => {
                                     }}
                                     className="mt-5 w-full black_btn"
                                 >
-                                    Sign Out
+                                    Se déconnecter
                                 </button>
                             </div>
                         )}
@@ -121,7 +121,7 @@ const Nav = () => {
                                     onClick={() => signIn(provider.id)}
                                     className="black_btn"
                                 >
-                                    SignIn
+                                    Se connecter
                                 </button>
                             ))}
                     </>

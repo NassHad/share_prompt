@@ -11,15 +11,18 @@ const MyProfile = () => {
     const [posts, setPosts] = useState([]);
     const router = useRouter();
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const response = await fetch(`/api/user/${session?.user.id}/posts`);
-            const data = await response.json();
-            setPosts(data);
-        };
+    if (!session)
+        useEffect(() => {
+            const fetchPosts = async () => {
+                const response = await fetch(
+                    `/api/user/${session?.user.id}/posts`
+                );
+                const data = await response.json();
+                setPosts(data);
+            };
 
-        if (session?.user.id) fetchPosts();
-    }, [session?.user.id]);
+            if (session?.user.id) fetchPosts();
+        }, [session?.user.id]);
 
     const handleEdit = async (post) => {
         router.push(`/edit-prompt?id=${post._id}`);
@@ -48,8 +51,8 @@ const MyProfile = () => {
     };
     return (
         <Profile
-            name="My"
-            desc="Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination"
+            name="Mon"
+            desc="Bienvenue sur votre page de profil personnalisé. Partagez vos prompts exceptionnelles et inspirez les autres avec la puissance de votre imagination."
             data={posts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
